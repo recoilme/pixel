@@ -28,8 +28,8 @@ type Stat struct {
 func init() {
 	flag.IntVar(&port, "port", 3000, "http port")
 	flag.BoolVar(&debug, "debug", false, "--debug=true")
-	cfg = pudge.DefaultConfig()
-	//cfg.StoreMode = 2
+	cfg = pudge.DefaultConfig
+	cfg.StoreMode = 2
 }
 
 func main() {
@@ -119,6 +119,7 @@ func write(c *gin.Context) {
 		return
 	}
 	_, err = db.Counter(counter, 1)
+	//log.Println("val:", val)
 	if err != nil {
 		renderError(c, err)
 		return

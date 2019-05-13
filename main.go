@@ -29,7 +29,7 @@ func init() {
 	flag.IntVar(&port, "port", 3000, "http port")
 	flag.BoolVar(&debug, "debug", false, "--debug=true")
 	cfg = pudge.DefaultConfig
-	cfg.StoreMode = 2
+	//cfg.StoreMode = 2
 }
 
 func main() {
